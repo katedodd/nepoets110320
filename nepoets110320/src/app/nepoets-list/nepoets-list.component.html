@@ -12,7 +12,16 @@
 >
 </ag-grid-angular>
 
-<p *ngIf="displayNepoet">
+<div *ngIf="displayNepoet" class = "displayNepoet">
     <img src = '{{selectedRows[0].img}}' />
-    <span>Do you want to play with {{selectedRows[0].name}}?</span>
-</p>
+    
+    <div>
+        <span>Do you want to play with {{selectedRows[0].name}}? </span>
+        <span>
+            <button (click)="onPlayButton(true)">Yes!</button>
+        </span>
+        <span>
+            <button (click)="onPlayButton(false)">Nah fam</button>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div>Adoption center!</div>
+<div>Would you like to adopt a nepoet?</div>
+<br/>
+<div>
+    <span>
+        <button (click) = 'adoptNepoet(true)'>Yes!</button>
+    </span>
+    <span>
+        <button (click) = 'adoptNepoet(false)'>Not right now</button>
+    </span>
+    <span>
+        <button (click) = 'tooManyQuestions()'>Why would I do that?</button>
+    </span>
+</div>
+
+<div *ngIf = 'adoptionForm'>
+    Oh, that's wonderful! Please fill out the form below to proceed with the adoption.
+    <app-adoption-form></app-adoption-form>
+</div>

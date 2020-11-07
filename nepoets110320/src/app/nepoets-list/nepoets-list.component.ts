@@ -53,4 +53,20 @@ export class NepoetsListComponent implements OnInit {
     console.log(this.displayNepoet);
     return this.selectedRows;
   }
+
+  onPlayButton(response) {
+    console.log(response);
+    if (response) {
+      this.selectedRows[0].img = '../../assets/nepoets/happy/happy_' 
+        + this.selectedRows[0].color + '_' 
+        + this.selectedRows[0].species + '.png';
+      alert("yay play time!");
+    }
+    else if (!response) {
+      this.selectedRows[0].img = '../../assets/nepoets/sad/sad_' 
+        + this.selectedRows[0].color + '_' 
+        + this.selectedRows[0].species + '.png';
+      alert("look what you did it");
+    }
+  }
 }
