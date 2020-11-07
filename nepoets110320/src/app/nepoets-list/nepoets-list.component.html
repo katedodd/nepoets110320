@@ -1,0 +1,27 @@
+<h2>Your Nepoets!</h2>
+<!-- <img class = "nepImage" src = "../../assets/nepoets/happy/kajeek.png" alt = "happy bby"/> -->
+
+<ag-grid-angular
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    rowSelection = "single"
+    (selectionChanged)="onSelectionChanged($event)"
+    (gridReady)="onGridReady($event)"
+>
+</ag-grid-angular>
+
+<div *ngIf="displayNepoet" class = "displayNepoet">
+    <img src = '{{selectedRows[0].img}}' />
+    
+    <div>
+        <span>Do you want to play with {{selectedRows[0].name}}? </span>
+        <span>
+            <button (click)="onPlayButton(true)">Yes!</button>
+        </span>
+        <span>
+            <button (click)="onPlayButton(false)">Nah fam</button>
+        </span>
+    </div>
+</div>
